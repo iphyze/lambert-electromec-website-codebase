@@ -1,0 +1,22 @@
+.divisions-page {
+  position: relative;
+  overflow: clip;
+  background: var(--bg);
+}
+
+.divisions-page > .animated-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1100px;
+}
+
+@supports not (content-visibility: auto) {
+  .divisions-page > .animated-section {
+    content-visibility: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .divisions-page > .animated-section {
+    contain-intrinsic-size: 900px;
+  }
+}

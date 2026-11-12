@@ -1,0 +1,1 @@
+export const defaultMetaDescription = 'Lambert Electromec is an EPC and MEP engineering company delivering power, data center, oil and gas, building, factory and facility management solutions across West Africa.'

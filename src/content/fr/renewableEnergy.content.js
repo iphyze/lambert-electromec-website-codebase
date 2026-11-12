@@ -1,0 +1,107 @@
+export const renewableEnergyContent = {
+  seo: {
+    title: 'Énergies Renouvelables',
+    description: "Nous accompagnons la transition de l'Afrique de l'Ouest vers une énergie plus propre et plus fiable grâce au solaire, au stockage d'énergie et à la valorisation énergétique des déchets.",
+    keywords: [
+      'énergies renouvelables Nigeria',
+      'solaire EPC Afrique de l’Ouest',
+      'stockage énergie Nigeria',
+      'valorisation énergétique des déchets',
+      'étude de faisabilité solaire',
+      'Lambert Electromec énergies renouvelables',
+    ],
+  },
+  hero: {
+    eyebrow: 'Énergie propre & résiliente',
+    title: 'Énergies Renouvelables',
+    tagline: "Une énergie plus propre et plus fiable pour l'Afrique de l'Ouest.",
+    image: '/images/landing/renewable-energy.png',
+    primaryCta: { label: 'Découvrir nos solutions', target: 'renewable-solutions' },
+    secondaryCta: { label: 'Contacter notre équipe', href: '/contact' },
+  },
+  overview: {
+    eyebrow: 'Livraison renouvelable intégrée',
+    heading: 'Exécution locale. Expertise renouvelable mondiale.',
+    featureLabel: "Conçu pour l'Afrique de l'Ouest",
+    featured: "Lambert Electromec conçoit, construit et exploite des solutions d'énergie renouvelable — des systèmes photovoltaïques aux solutions de stockage d'énergie, en passant par les centrales de valorisation énergétique des déchets — conçues pour réduire les coûts, limiter les émissions et garantir la continuité de l'alimentation électrique là où le réseau fait défaut. Forts de notre partenariat avec Phoenix Energy et de près de 60 ans d'expertise en ingénierie au sein du groupe INDEVCO, nous mettons à la disposition des particuliers, des entreprises et des industries du Nigeria et de toute l'Afrique de l'Ouest des technologies renouvelables éprouvées et bancables.",
+    paragraphs: [
+      "La fiabilité de l'approvisionnement électrique reste un enjeu de coût majeur en Afrique de l'Ouest. Notre division Énergies Renouvelables associe la capacité EPC locale de Lambert Electromec à l'expérience internationale de Phoenix Energy afin de livrer des infrastructures énergétiques pratiques et bancables.",
+      "Ensemble, nous couvrons l'intégralité du cycle de vie du projet, de l'étude de faisabilité et de l'analyse de site jusqu'à l'ingénierie, la fourniture, la construction, l'installation, l'exploitation et la maintenance à long terme.",
+    ],
+    lifecycleLabel: 'Cycle de livraison du projet',
+    modelsLabel: 'Modèles de réalisation flexibles',
+    lifecycle: [
+      'Étude de faisabilité & analyse de site',
+      'Ingénierie & conception',
+      'Fourniture des équipements',
+      'Construction & installation',
+      'Exploitation & maintenance',
+    ],
+    deliveryModels: ['EPC', 'BOT', 'BOO'],
+  },
+  solutions: {
+    eyebrow: 'Nos solutions en énergies renouvelables',
+    heading: 'Nos solutions en énergies renouvelables',
+    items: [
+      {
+        key: 'solar',
+        title: 'Photovoltaïque solaire & solaire thermique',
+        description: "Nous concevons, installons et assurons la maintenance de systèmes solaires haute performance et de solutions d'onduleurs de secours, efficaces, économiques et adaptés au profil énergétique de chaque client. Nos installations sont disponibles en :",
+        bullets: ['Systèmes photovoltaïques raccordés au réseau (On-Grid)', 'Systèmes photovoltaïques autonomes (Off-Grid)', 'Systèmes photovoltaïques hybrides (Hybrid Grid)'],
+      },
+      {
+        key: 'storage',
+        title: "Systèmes de stockage d'énergie",
+        description: "Nos systèmes de stockage d'énergie électrique (EESS) permettent de disposer d'électricité renouvelable même lorsque le soleil n'est pas au rendez-vous ou en cas de coupure du réseau. Associé à une installation photovoltaïque, l'EESS améliore la fiabilité de l'alimentation, contribue à la régulation rapide de fréquence et à la gestion de la demande, et réduit les problèmes de qualité de l'électricité — une solution aussi bien adaptée aux besoins raccordés au réseau qu'aux usages commerciaux et industriels hors réseau.",
+      },
+      {
+        key: 'biomass',
+        title: 'Biomasse & valorisation énergétique des déchets',
+        description: "Nous transformons les déchets organiques et industriels en énergie exploitable, réduisant ainsi les coûts d'élimination tout en produisant une énergie fiable pour les sites qui les génèrent.",
+      },
+      {
+        key: 'wind',
+        title: 'Éolien, biogaz de décharge & récupération de chaleur fatale',
+        description: "Au-delà du solaire, notre expertise s'étend à l'énergie éolienne, à la captation du biogaz de décharge, ainsi qu'à la récupération de la chaleur et des gaz perdus — autant de solutions supplémentaires pour nos clients industriels souhaitant valoriser une énergie qui, autrement, serait perdue.",
+      },
+      {
+        key: 'audit',
+        title: 'Audit énergétique & étude de faisabilité solaire',
+        description: "Avant toute spécification d'équipement, nos consultants en énergie évaluent la pertinence d'une solution renouvelable pour votre site : analyse de la production et de la consommation d'énergie afin d'éliminer les gaspillages, dimensionnement de la solution la mieux adaptée, et modélisation du retour sur investissement et du délai d'amortissement.",
+      },
+    ],
+  },
+  whyLambert: {
+    eyebrow: 'Pourquoi choisir Lambert Electromec',
+    heading: 'Pourquoi choisir Lambert Electromec',
+    stats: [
+      { value: '20+', label: "ans d'expérience en ingénierie en Afrique de l'Ouest" },
+      { value: 'Tier-1', label: "fournisseur de rang 1 pour les solutions d'ingénierie" },
+      { value: 'ISO', label: 'certifié pour la qualité, la santé, la sécurité et la gestion environnementale' },
+      { value: '1 000+', label: 'professionnels qualifiés à travers le monde' },
+    ],
+    partnership: "Un partenariat technologique mondial avec Phoenix Energy, filiale du groupe INDEVCO fort de plus de 60 ans d'expérience, présent au Moyen-Orient, en Afrique du Nord, en Europe et aux États-Unis",
+    partnersIntro: "Nous travaillons avec des partenaires technologiques de premier plan — parmi lesquels Huawei, Sungrow, LONGi, Canadian Solar, Jinko Solar, Siemens, Schneider Electric et GE — pour garantir que chaque installation repose sur des équipements éprouvés et bancables.",
+    partners: ['Huawei', 'Sungrow', 'LONGi', 'Canadian Solar', 'Jinko Solar', 'Siemens', 'Schneider Electric', 'GE'],
+  },
+  trackRecord: {
+    eyebrow: 'Des réalisations qui font leurs preuves',
+    heading: 'Des réalisations qui font leurs preuves',
+    intro: "Grâce à notre partenariat avec Phoenix Energy, notre portefeuille combiné inclut des projets d'énergie renouvelable tels que :",
+    projects: [
+      { value: '64 MWc', label: 'centrale solaire', location: 'Égypte' },
+      { value: '10 MWc', label: 'centrale solaire', location: 'Anarita, Chypre' },
+      { value: '30 MW', label: 'centrale de cogénération biomasse', location: 'United Corrstack Inc., Reading, Pennsylvanie (États-Unis)' },
+      { value: '1,75 MWc', label: 'installation solaire en ombrières de parking', location: 'ENOVA–MAF, Égypte' },
+      { value: '1,08 MWc', label: 'installation de canopées solaires', location: 'Beirut River Solar Snake, Liban' },
+      { value: 'Grande échelle', label: 'plusieurs centrales solaires actuellement en construction', location: 'Chypre et Italie' },
+    ],
+  },
+  cta: {
+    eyebrow: "Passons à l'action",
+    heading: 'Vous envisagez une solution solaire, de stockage, ou toute autre solution renouvelable pour votre site ?',
+    description: "Notre équipe vous accompagne à travers un audit énergétique et une étude de faisabilité gratuits, afin d'identifier la solution la mieux adaptée à votre activité.",
+    label: 'Contacter notre équipe Énergies Renouvelables',
+    href: '/contact',
+  },
+}

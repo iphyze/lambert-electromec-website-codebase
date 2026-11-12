@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "profile": "Profil",
+    "history": "Historique",
+    "missionVision": "Mission & Vision",
+    "corporate": "Entreprise",
+    "solutionProvider": "Fournisseur de solutions",
+    "hse": "HSE",
+    "qmsIso": "QMS/ISO",
+    "csr": "RSE",
+    "division": "Division",
+    "divisions": "Divisions",
+    "buildingsFactories": "Bâtiments & Usines",
+    "powerSolutions": "Solutions d’énergie",
+    "dataCenter": "Centre de données",
+    "oilGas": "Pétrole et gaz",
+    "projects": "Projets",
+    "facility": "Gestion d’installations",
+    "facilityManagement": "Gestion d’installations",
+    "renewableEnergy": "Énergies Renouvelables",
+    "contact": "Contact"
+  },
+  "actions": {
+    "switchTheme": "Changer le thème",
+    "switchLanguage": "Sélectionner la langue",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "light": "Clair",
+    "dark": "Sombre",
+    "explore": "Explorer",
+    "contact": "Nous contacter"
+  },
+  "home": {
+    "eyebrow": "Ingénierie. Approvisionnement. Construction.",
+    "title": "Donner vie aux grandes structures",
+    "intro": "Lambert Electromec fournit des solutions MEP, EPC, énergie, centres de données et gestion d’installations en Afrique de l’Ouest."
+  },
+  "placeholder": {
+    "title": "Structure de page prête",
+    "body": "Le contenu, les visuels et les interactions seront construits à la prochaine étape."
+  },
+  "loader": {
+    "ariaLabel": "Chargement de Lambert Electromec",
+    "title": "Chargement...",
+    "body": "Chargement de l’excellence en ingénierie, avec précision."
+  }
+}

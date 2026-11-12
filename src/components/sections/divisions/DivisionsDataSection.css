@@ -1,0 +1,850 @@
+.divisions-data {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  scroll-margin-top: clamp(6.5rem, 10vw, 8.5rem);
+  background:
+    radial-gradient(circle at 92% 6%, rgba(72, 167, 80, 0.13), transparent 29rem),
+    radial-gradient(circle at 7% 88%, rgba(56, 58, 61, 0.07), transparent 28rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 72%, var(--bg)), var(--bg));
+}
+
+.divisions-data-bg,
+.divisions-data-grid,
+.divisions-data-radar,
+.divisions-data-node {
+  position: absolute;
+  pointer-events: none;
+}
+
+.divisions-data-bg {
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.divisions-data-grid {
+  inset: 0;
+  opacity: 0.42;
+  background-image:
+    linear-gradient(90deg, rgba(72, 167, 80, 0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(56, 58, 61, 0.038) 1px, transparent 1px),
+    radial-gradient(circle, rgba(72, 167, 80, 0.26) 1px, transparent 1.1px);
+  background-size: 5rem 5rem, 5rem 5rem, 0.95rem 0.95rem;
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 84%, transparent);
+}
+
+.divisions-data-radar {
+  width: 30rem;
+  height: 30rem;
+  right: -11rem;
+  top: 8rem;
+  border: 1px solid rgba(72, 167, 80, 0.15);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 4rem rgba(72, 167, 80, 0.018),
+    inset 0 0 0 8rem rgba(72, 167, 80, 0.012);
+}
+
+.divisions-data-radar::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(72, 167, 80, 0.72), transparent);
+  animation: divisionsDataRadar 10s linear infinite;
+  animation-play-state: var(--section-animation-state, running);
+}
+
+.divisions-data-node {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: var(--brand-green);
+  box-shadow: 0 0 0 0.36rem rgba(72, 167, 80, 0.08), 0 0 1.25rem rgba(72, 167, 80, 0.28);
+}
+
+.divisions-data-node-one { left: 8%; top: 18%; }
+.divisions-data-node-two { right: 12%; bottom: 22%; }
+.divisions-data-node-three { left: 44%; bottom: 8%; }
+
+.divisions-data-container {
+  position: relative;
+}
+
+.divisions-data-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.58rem;
+  color: var(--brand-green);
+  font-size: 0.76rem;
+  font-weight: 820;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.divisions-data-hero {
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.82fr) minmax(34rem, 1.18fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.divisions-data-copy h2 {
+  max-width: 46rem;
+  margin: 0.85rem 0 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(2.9rem, 6vw, 6rem);
+  font-weight: 860;
+  line-height: 0.94;
+  letter-spacing: -0.066em;
+  text-wrap: balance;
+}
+
+/* The French data-center title is substantially longer than the English title.
+   Keep it within the copy column without affecting the English layout. */
+:lang(fr) .divisions-data-copy h2 {
+  font-size: clamp(2.9rem, 4.4vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.divisions-data-copy > p {
+  max-width: 40rem;
+  margin: 1.35rem 0 0;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.25vw, 1.14rem);
+  line-height: 1.8;
+}
+
+.divisions-data-status {
+  max-width: 38rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.8rem;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--brand-green) 22%, var(--border));
+  border-radius: 1.2rem;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+}
+
+.divisions-data-status > span {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.95rem;
+  color: var(--brand-green-deep);
+  background: color-mix(in srgb, var(--brand-green) 12%, var(--surface));
+}
+
+.divisions-data-status div span {
+  display: block;
+  color: var(--brand-green);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.divisions-data-status strong {
+  display: block;
+  margin-top: 0.28rem;
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.divisions-data-status > i {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--brand-green);
+  box-shadow: 0 0 0 0.38rem rgba(72, 167, 80, 0.09), 0 0 1.1rem rgba(72, 167, 80, 0.32);
+  animation: divisionsDataStatus 1.9s ease-in-out infinite;
+  animation-play-state: var(--section-animation-state, running);
+}
+
+.divisions-data-photo {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(31rem, 46vw, 40rem);
+  margin: 0;
+  border-radius: clamp(1.5rem, 3vw, 2.25rem);
+  background: #121a17;
+  box-shadow: 0 34px 90px rgba(12, 27, 17, 0.18);
+}
+
+.divisions-data-photo img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.divisions-data-photo:hover img {
+  transform: scale(1.045);
+}
+
+.divisions-data-photo-shade,
+.divisions-data-photo-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.divisions-data-photo-shade {
+  background:
+    linear-gradient(180deg, rgba(4, 12, 9, 0.08), rgba(4, 13, 9, 0.72)),
+    linear-gradient(120deg, rgba(72, 167, 80, 0.12), transparent 52%);
+}
+
+.divisions-data-photo-grid {
+  opacity: 0.34;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.065) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 4.5rem 4.5rem;
+  mask-image: linear-gradient(180deg, #000, transparent 88%);
+}
+
+.divisions-data-photo figcaption {
+  position: absolute;
+  left: 1.3rem;
+  right: 1.3rem;
+  bottom: 1.25rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #fff;
+}
+
+.divisions-data-photo figcaption span {
+  color: #77df80;
+  font-size: 0.7rem;
+  font-weight: 830;
+  letter-spacing: 0.13em;
+}
+
+.divisions-data-photo figcaption strong {
+  max-width: 24rem;
+  text-align: right;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.divisions-data-console {
+  display: grid;
+  grid-template-columns: minmax(35rem, 1.25fr) minmax(20rem, 0.75fr);
+  gap: 0.85rem;
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding: 0.85rem;
+  border-radius: clamp(1.55rem, 3vw, 2.25rem);
+  color: #fff;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(72, 167, 80, 0.2), transparent 32%),
+    linear-gradient(150deg, #141c18, #222b27 52%, #0d1210);
+  box-shadow: 0 30px 82px rgba(5, 14, 9, 0.25);
+}
+
+.divisions-data-topology,
+.divisions-data-detail {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.55rem;
+}
+
+.divisions-data-topology {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.divisions-data-topology-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 0.25rem 0.85rem;
+}
+
+.divisions-data-topology-head span {
+  color: #75dc7e;
+  font-size: 0.68rem;
+  font-weight: 820;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.divisions-data-topology-head strong {
+  max-width: 24rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.divisions-data-map {
+  position: relative;
+  min-height: 38rem;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(72, 167, 80, 0.16), transparent 32%),
+    rgba(255, 255, 255, 0.025);
+}
+
+.divisions-data-map::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle, rgba(72, 167, 80, 0.3) 1px, transparent 1.1px);
+  background-size: 4rem 4rem, 4rem 4rem, 0.95rem 0.95rem;
+  mask-image: radial-gradient(circle at 50% 50%, #000, transparent 84%);
+}
+
+.divisions-data-map-ring,
+.divisions-data-map-line,
+.divisions-data-core,
+.divisions-data-map-node {
+  position: absolute;
+}
+
+.divisions-data-map-ring {
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(117, 221, 126, 0.14);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.divisions-data-map-ring-one {
+  width: 17rem;
+  height: 17rem;
+}
+
+.divisions-data-map-ring-two {
+  width: 28rem;
+  height: 28rem;
+  border-style: dashed;
+  animation: divisionsDataRing 24s linear infinite;
+  animation-play-state: var(--section-animation-state, running);
+}
+
+.divisions-data-map-line {
+  left: 50%;
+  top: 50%;
+  width: 38%;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(113, 223, 123, 0.5), transparent);
+}
+
+.divisions-data-map-line-one { transform: rotate(-26deg); }
+.divisions-data-map-line-two { transform: rotate(89deg); }
+.divisions-data-map-line-three { transform: rotate(205deg); }
+
+.divisions-data-core {
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  width: 9rem;
+  height: 9rem;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.6rem;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(145deg, #52b85d, #267a37);
+  box-shadow: 0 0 0 0.8rem rgba(72, 167, 80, 0.08), 0 22px 50px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%);
+}
+
+.divisions-data-core span {
+  max-width: 6.5rem;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 730;
+  line-height: 1.35;
+}
+
+.divisions-data-map-node {
+  z-index: 4;
+  width: min(12.5rem, 28%);
+  min-height: 7.8rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  background: rgba(20, 31, 25, 0.93);
+  transition: transform var(--transition), border-color var(--transition), color var(--transition), background var(--transition);
+}
+
+.divisions-data-map-node:hover,
+.divisions-data-map-node.is-active {
+  color: #fff;
+  border-color: rgba(117, 221, 126, 0.38);
+  background: rgba(35, 52, 42, 0.96);
+  transform: translateY(-0.25rem);
+}
+
+.divisions-data-map-node > span {
+  width: 2.65rem;
+  height: 2.65rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.85rem;
+  color: #78df81;
+  background: rgba(72, 167, 80, 0.12);
+}
+
+.divisions-data-map-node strong {
+  align-self: center;
+  min-width: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.divisions-data-map-node small {
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 0.62rem;
+  font-weight: 820;
+}
+
+.divisions-data-map-node i {
+  grid-column: 1 / -1;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.divisions-data-map-node i::after {
+  content: '';
+  display: block;
+  width: 26%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #78df81, transparent);
+  animation: divisionsDataSignal 4.8s linear infinite;
+  animation-play-state: var(--section-animation-state, running);
+}
+
+.divisions-data-map-node-1 { left: 4%; top: 7%; }
+.divisions-data-map-node-2 { right: 4%; top: 7%; }
+.divisions-data-map-node-3 { left: 3%; bottom: 8%; }
+.divisions-data-map-node-4 { right: 3%; bottom: 8%; }
+.divisions-data-map-node-5 { left: 50%; top: 2%; transform: translateX(-50%); }
+.divisions-data-map-node-6 { left: 50%; bottom: 2%; transform: translateX(-50%); }
+.divisions-data-map-node-5:hover,
+.divisions-data-map-node-5.is-active,
+.divisions-data-map-node-6:hover,
+.divisions-data-map-node-6.is-active {
+  transform: translateX(-50%) translateY(-0.25rem);
+}
+
+.divisions-data-detail {
+  min-width: 0;
+  min-height: 46rem;
+  padding: clamp(1.25rem, 2.7vw, 2rem);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(72, 167, 80, 0.14), transparent 24rem),
+    rgba(255, 255, 255, 0.045);
+}
+
+.divisions-data-detail > article {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.divisions-data-detail-image {
+  position: relative;
+  min-height: 13rem;
+  margin: clamp(2.75rem, 5vw, 5rem) 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(121, 226, 131, 0.15);
+  border-radius: 1.2rem;
+  background: #0e1812;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+}
+
+.divisions-data-detail-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 13rem;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.divisions-data-detail-image:hover img {
+  transform: scale(1.035);
+}
+
+.divisions-data-detail-image-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 15, 9, 0.03) 25%, rgba(5, 15, 9, 0.86)),
+    linear-gradient(120deg, rgba(72, 167, 80, 0.12), transparent 58%);
+}
+
+.divisions-data-detail-image figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.9rem;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 740;
+  line-height: 1.4;
+}
+
+.divisions-data-detail article > header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.divisions-data-detail-icon {
+  width: 3.65rem;
+  height: 3.65rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1.1rem;
+  color: #7ce486;
+  background: rgba(72, 167, 80, 0.14);
+}
+
+.divisions-data-detail header div > span {
+  color: #78df81;
+  font-size: 0.68rem;
+  font-weight: 820;
+  letter-spacing: 0.12em;
+}
+
+.divisions-data-detail h3 {
+  margin: 0.35rem 0 0;
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.divisions-data-detail header p {
+  margin: 0.5rem 0 0;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+
+.divisions-data-detail ul {
+  margin: 1.3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.divisions-data-detail li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.65rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.69);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.divisions-data-detail li svg {
+  color: #76dd7f;
+  margin-top: 0.24rem;
+}
+
+.divisions-data-capability-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.divisions-data-capability-strip button {
+  position: relative;
+  min-width: 0;
+  min-height: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--brand-green) 13%, var(--border));
+  border-radius: 1.15rem;
+  color: var(--text-muted);
+  text-align: left;
+  background: color-mix(in srgb, var(--surface) 90%, var(--bg));
+  transition: transform var(--transition), border-color var(--transition), color var(--transition), background var(--transition);
+}
+
+.divisions-data-capability-strip button:hover,
+.divisions-data-capability-strip button.is-active {
+  transform: translateY(-0.3rem);
+  border-color: color-mix(in srgb, var(--brand-green) 43%, var(--border));
+  color: var(--text);
+  background: color-mix(in srgb, var(--brand-green) 8%, var(--surface));
+}
+
+.divisions-data-capability-strip button > span {
+  color: color-mix(in srgb, var(--text-muted) 70%, transparent);
+  font-size: 0.65rem;
+  font-weight: 820;
+  letter-spacing: 0.11em;
+}
+
+.divisions-data-capability-strip button > i {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.95rem;
+  color: var(--brand-green-deep);
+  background: color-mix(in srgb, var(--brand-green) 12%, var(--surface));
+}
+
+.divisions-data-capability-strip strong {
+  margin-top: auto;
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.divisions-data-capability-strip small {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+:root[data-theme='dark'] .divisions-data {
+  background:
+    radial-gradient(circle at 92% 6%, rgba(72, 167, 80, 0.1), transparent 29rem),
+    radial-gradient(circle at 7% 88%, rgba(255, 255, 255, 0.035), transparent 28rem),
+    linear-gradient(180deg, #0b0e13, #0a0d12);
+}
+
+@keyframes divisionsDataRadar {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes divisionsDataStatus {
+  0%, 100% { opacity: 0.5; transform: scale(0.88); }
+  50% { opacity: 1; transform: scale(1.14); }
+}
+
+@keyframes divisionsDataRing {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes divisionsDataSignal {
+  from { transform: translateX(-140%); }
+  to { transform: translateX(500%); }
+}
+
+@keyframes divisionsDataDetailOrbit {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes divisionsDataDetailBeam {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1180px) {
+  .divisions-data-hero,
+  .divisions-data-console {
+    grid-template-columns: 1fr;
+  }
+
+  .divisions-data-detail {
+    min-height: 42rem;
+  }
+
+  .divisions-data-capability-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .divisions-data-map {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    padding: 8rem 0.75rem 0.75rem;
+  }
+
+  .divisions-data-map-ring-one,
+  .divisions-data-map-ring-two {
+    width: 13rem;
+    height: 13rem;
+    top: 4.2rem;
+  }
+
+  .divisions-data-core {
+    top: 4.2rem;
+    width: 6.8rem;
+    height: 6.8rem;
+  }
+
+  .divisions-data-map-line {
+    display: none;
+  }
+
+  .divisions-data-map-node {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 7rem;
+    transform: none;
+  }
+
+  .divisions-data-map-node-5:hover,
+  .divisions-data-map-node-5.is-active,
+  .divisions-data-map-node-6:hover,
+  .divisions-data-map-node-6.is-active {
+    transform: translateY(-0.25rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .divisions-data-copy h2 {
+    font-size: clamp(2.65rem, 14vw, 4.25rem);
+  }
+
+  .divisions-data-photo {
+    min-height: 27rem;
+  }
+
+  .divisions-data-console {
+    padding: 0.7rem;
+    border-radius: 1.35rem;
+  }
+
+  .divisions-data-topology,
+  .divisions-data-detail {
+    padding: 0.8rem;
+  }
+
+  .divisions-data-detail {
+    min-height: auto;
+  }
+
+  .divisions-data-detail-image {
+    margin-top: 2.75rem;
+  }
+
+  .divisions-data-detail-image,
+  .divisions-data-detail-image img {
+    min-height: 10.5rem;
+  }
+
+  .divisions-data-topology-head {
+    display: grid;
+  }
+
+  .divisions-data-topology-head strong {
+    text-align: left;
+  }
+
+  .divisions-data-map {
+    grid-template-columns: 1fr;
+  }
+
+  .divisions-data-capability-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .divisions-data-capability-strip button {
+    min-height: 9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .divisions-data-radar::after,
+  .divisions-data-status > i,
+  .divisions-data-map-ring-two,
+  .divisions-data-map-node i::after {
+    animation: none !important;
+  }
+}
+
+/* Compact topology: the mobile view intentionally presents the selectable lists
+   without the central radar/core decoration. This is clearer and avoids an extra
+   animated compositing layer on mobile browsers. */
+@media (max-width: 820px) {
+  .animated-section.divisions-data {
+    isolation: auto;
+    transform: none !important;
+    -webkit-transform: none !important;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  .divisions-data-bg,
+  .divisions-data-photo-grid,
+  .divisions-data-map::before,
+  .divisions-data-map-ring,
+  .divisions-data-map-line,
+  .divisions-data-core {
+    display: none !important;
+  }
+
+  .divisions-data-console,
+  .divisions-data-topology,
+  .divisions-data-map,
+  .divisions-data-map-node,
+  .divisions-data-detail,
+  .divisions-data-detail > article {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    filter: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+  }
+
+  .divisions-data-console,
+  .divisions-data-topology,
+  .divisions-data-map,
+  .divisions-data-detail {
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+
+  .divisions-data-map {
+    min-height: auto;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.025);
+  }
+}

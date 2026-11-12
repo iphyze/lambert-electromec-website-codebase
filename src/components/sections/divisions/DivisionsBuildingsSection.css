@@ -1,0 +1,907 @@
+.divisions-buildings {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  scroll-margin-top: clamp(6.5rem, 10vw, 8.5rem);
+  background:
+    radial-gradient(circle at 4% 12%, rgba(72, 167, 80, 0.12), transparent 29rem),
+    radial-gradient(circle at 94% 80%, rgba(56, 58, 61, 0.07), transparent 30rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 74%, var(--bg)), var(--bg));
+}
+
+.divisions-buildings-bg,
+.divisions-buildings-grid,
+.divisions-buildings-arc {
+  position: absolute;
+  pointer-events: none;
+}
+
+.divisions-buildings-bg {
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.divisions-buildings-grid {
+  inset: 0;
+  opacity: 0.42;
+  background-image:
+    linear-gradient(90deg, rgba(72, 167, 80, 0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(56, 58, 61, 0.035) 1px, transparent 1px),
+    radial-gradient(circle, rgba(72, 167, 80, 0.26) 1px, transparent 1.15px);
+  background-size: 5.25rem 5.25rem, 5.25rem 5.25rem, 1rem 1rem;
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.85), transparent 92%);
+}
+
+.divisions-buildings-arc {
+  border: 1px solid rgba(72, 167, 80, 0.13);
+  border-radius: 50%;
+}
+
+.divisions-buildings-arc::after {
+  content: '';
+  position: absolute;
+  width: 0.46rem;
+  height: 0.46rem;
+  border-radius: 50%;
+  background: var(--brand-green);
+  box-shadow: 0 0 0 0.36rem rgba(72, 167, 80, 0.08), 0 0 1.2rem rgba(72, 167, 80, 0.28);
+}
+
+.divisions-buildings-arc-one {
+  width: 28rem;
+  height: 28rem;
+  right: -10rem;
+  top: 6rem;
+}
+
+.divisions-buildings-arc-one::after {
+  left: 8%;
+  top: 36%;
+}
+
+.divisions-buildings-arc-two {
+  width: 18rem;
+  height: 18rem;
+  left: -9rem;
+  bottom: 12rem;
+}
+
+.divisions-buildings-arc-two::after {
+  right: 4%;
+  top: 48%;
+}
+
+.divisions-buildings-container {
+  position: relative;
+}
+
+.divisions-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.58rem;
+  color: var(--brand-green);
+  font-size: 0.76rem;
+  font-weight: 820;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.divisions-buildings-hero {
+  display: grid;
+  grid-template-columns: minmax(19rem, 0.82fr) minmax(34rem, 1.18fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.divisions-buildings-copy h2,
+.divisions-buildings-dossier-head h3,
+.divisions-buildings-mechanical-head h3,
+.divisions-buildings-fitout-copy h3 {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.divisions-buildings-copy h2 {
+  max-width: 42rem;
+  margin-top: 0.85rem;
+  font-size: clamp(2.9rem, 6vw, 6rem);
+  font-weight: 860;
+  line-height: 0.94;
+}
+
+.divisions-buildings-copy > p {
+  max-width: 38rem;
+  margin: 1.35rem 0 0;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.25vw, 1.16rem);
+  line-height: 1.8;
+}
+
+.divisions-buildings-system {
+  max-width: 35rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.8rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid color-mix(in srgb, var(--brand-green) 24%, var(--border));
+  border-radius: 1.2rem;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  box-shadow: 0 18px 48px rgba(13, 34, 18, 0.08);
+}
+
+.divisions-buildings-system-icon {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.95rem;
+  color: var(--brand-green-deep);
+  background: color-mix(in srgb, var(--brand-green) 13%, var(--surface));
+}
+
+.divisions-buildings-system div span {
+  display: block;
+  color: var(--brand-green);
+  font-size: 0.68rem;
+  font-weight: 790;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.divisions-buildings-system strong {
+  display: block;
+  margin-top: 0.28rem;
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.divisions-buildings-system > svg {
+  color: var(--brand-green);
+  transition: transform var(--transition);
+}
+
+.divisions-buildings-system:hover > svg {
+  transform: translate(0.18rem, -0.18rem);
+}
+
+.divisions-buildings-visual {
+  position: relative;
+  min-height: clamp(31rem, 48vw, 42rem);
+}
+
+.divisions-buildings-photo {
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  border-radius: clamp(1.35rem, 2.6vw, 2rem);
+  background: #1b211d;
+  box-shadow: 0 30px 80px rgba(12, 27, 17, 0.18);
+}
+
+.divisions-buildings-photo img,
+.divisions-buildings-fitout-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.divisions-buildings-photo:hover img,
+.divisions-buildings-fitout-photo:hover img {
+  transform: scale(1.045);
+}
+
+.divisions-buildings-photo-main {
+  inset: 0 13% 6% 0;
+}
+
+.divisions-buildings-photo-secondary {
+  width: 40%;
+  height: 49%;
+  right: 0;
+  bottom: 0;
+  border: 0.55rem solid color-mix(in srgb, var(--bg) 78%, transparent);
+}
+
+.divisions-buildings-photo-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(3, 12, 8, 0.72)),
+    linear-gradient(120deg, rgba(72, 167, 80, 0.08), transparent 52%);
+}
+
+.divisions-buildings-photo figcaption,
+.divisions-buildings-fitout-photo figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.15rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #fff;
+}
+
+.divisions-buildings-photo figcaption span,
+.divisions-buildings-fitout-photo figcaption span {
+  color: #75db7d;
+  font-size: 0.68rem;
+  font-weight: 830;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.divisions-buildings-photo figcaption strong,
+.divisions-buildings-fitout-photo figcaption strong {
+  max-width: 18rem;
+  text-align: right;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.divisions-buildings-measurement {
+  position: absolute;
+  left: 4%;
+  top: 5%;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(6, 16, 11, 0.62);
+}
+
+.divisions-buildings-measurement i {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.divisions-buildings-measurement i:nth-child(2) {
+  background: #65d56f;
+  animation: divisionsBuildingSignal 1.8s ease-in-out infinite;
+  animation-play-state: var(--section-animation-state, running);
+}
+
+.divisions-buildings-dossier {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding: clamp(1rem, 1.8vw, 1.35rem);
+  border: 1px solid color-mix(in srgb, var(--brand-green) 17%, var(--border));
+  border-radius: clamp(1.5rem, 3vw, 2.25rem);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(72, 167, 80, 0.13), transparent 30rem),
+    color-mix(in srgb, var(--surface) 88%, var(--bg));
+  box-shadow: var(--shadow-soft);
+}
+
+.divisions-buildings-dossier-head {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.35rem, 2.5vw, 2rem);
+  border-radius: 1.5rem;
+  color: #fff;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(102, 211, 113, 0.25), transparent 34%),
+    linear-gradient(150deg, #17241d, #25302b 54%, #101713);
+}
+
+.divisions-buildings-dossier-head::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle, rgba(72, 167, 80, 0.26) 1px, transparent 1.1px);
+  background-size: 4rem 4rem, 4rem 4rem, 0.9rem 0.9rem;
+  mask-image: linear-gradient(135deg, #000, transparent 82%);
+}
+
+.divisions-buildings-dossier-head > * {
+  position: relative;
+  z-index: 1;
+}
+
+.divisions-buildings-dossier-head .divisions-section-kicker {
+  color: #76dc7f;
+}
+
+.divisions-buildings-dossier-head h3 {
+  margin-top: 0.8rem;
+  color: #fff;
+  font-size: clamp(2rem, 3.8vw, 3.7rem);
+  font-weight: 850;
+  line-height: 0.98;
+}
+
+.divisions-buildings-dossier-head p,
+.divisions-buildings-dossier-head small {
+  display: block;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.75;
+}
+
+.divisions-buildings-dossier-head p {
+  margin: 1.15rem 0 0;
+  font-size: 0.98rem;
+}
+
+.divisions-buildings-dossier-head small {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.83rem;
+}
+
+.divisions-buildings-dossier-image {
+  position: relative;
+  min-height: 13rem;
+  margin: auto 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(126, 229, 136, 0.16);
+  border-radius: 1.2rem;
+  background: #0e1712;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.22);
+}
+
+.divisions-buildings-dossier-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 13rem;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.divisions-buildings-dossier-image:hover img {
+  transform: scale(1.035);
+}
+
+.divisions-buildings-dossier-image-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 17, 11, 0.04) 28%, rgba(6, 17, 11, 0.82)),
+    linear-gradient(115deg, rgba(72, 167, 80, 0.12), transparent 55%);
+}
+
+.divisions-buildings-dossier-image figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #7fe188;
+  font-size: 0.68rem;
+  font-weight: 820;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.divisions-buildings-electrical-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.divisions-buildings-electrical-card {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--brand-green) 15%, var(--border));
+  border-radius: 1.35rem;
+  background: color-mix(in srgb, var(--surface) 91%, var(--bg));
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.divisions-buildings-electrical-card.is-wide {
+  grid-column: 1 / -1;
+}
+
+.divisions-buildings-electrical-card:hover {
+  transform: translateY(-0.28rem);
+  border-color: color-mix(in srgb, var(--brand-green) 42%, var(--border));
+  box-shadow: 0 20px 45px rgba(16, 45, 23, 0.1);
+}
+
+.divisions-buildings-electrical-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.divisions-buildings-card-number {
+  color: color-mix(in srgb, var(--text-muted) 75%, transparent);
+  font-size: 0.68rem;
+  font-weight: 830;
+  letter-spacing: 0.12em;
+}
+
+.divisions-buildings-card-icon,
+.divisions-buildings-panel-head > span,
+.divisions-buildings-fitout-icon {
+  display: grid;
+  place-items: center;
+  color: var(--brand-green-deep);
+  background: color-mix(in srgb, var(--brand-green) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--brand-green) 22%, transparent);
+}
+
+.divisions-buildings-card-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+}
+
+.divisions-buildings-electrical-card h4 {
+  margin: 1rem 0 0;
+  color: var(--text);
+  font-size: clamp(1.12rem, 1.6vw, 1.42rem);
+  line-height: 1.2;
+}
+
+.divisions-buildings-electrical-card ul,
+.divisions-buildings-piped ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.divisions-buildings-electrical-card ul.is-two-columns {
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+.divisions-buildings-electrical-card li {
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 0.62rem;
+  color: var(--text-muted);
+  font-size: 0.83rem;
+  line-height: 1.55;
+}
+
+.divisions-buildings-electrical-card li > span:first-child {
+  width: 0.38rem;
+  height: 0.38rem;
+  margin-top: 0.48rem;
+  border-radius: 50%;
+  background: var(--brand-green);
+  box-shadow: 0 0 0 0.22rem rgba(72, 167, 80, 0.09);
+}
+
+.divisions-buildings-card-signal {
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: 0.7rem;
+  height: 1px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--brand-green) 14%, var(--border));
+}
+
+.divisions-buildings-card-signal i {
+  display: block;
+  width: 22%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--brand-green), transparent);
+  animation: divisionsBuildingTrack 4.8s linear infinite;
+  animation-play-state: var(--section-animation-state, running);
+}
+
+.divisions-buildings-mechanical {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.68fr) minmax(18rem, 0.66fr) minmax(26rem, 1fr);
+  gap: 1rem;
+  margin-top: clamp(4rem, 8vw, 7rem);
+}
+
+.divisions-buildings-mechanical-head,
+.divisions-buildings-piped,
+.divisions-buildings-hvac {
+  border-radius: clamp(1.35rem, 2.4vw, 1.9rem);
+}
+
+.divisions-buildings-mechanical-head {
+  padding: clamp(1.3rem, 2.5vw, 2rem);
+  border: 1px solid color-mix(in srgb, var(--brand-green) 20%, var(--border));
+  background:
+    radial-gradient(circle at 18% 0%, rgba(72, 167, 80, 0.16), transparent 38%),
+    color-mix(in srgb, var(--surface) 88%, var(--bg));
+}
+
+.divisions-buildings-mechanical-head h3,
+.divisions-buildings-fitout-copy h3 {
+  margin-top: 0.75rem;
+  font-size: clamp(2rem, 3.6vw, 3.5rem);
+  font-weight: 850;
+  line-height: 1;
+}
+
+.divisions-buildings-mechanical-head p,
+.divisions-buildings-fitout-copy > p {
+  margin: 1.15rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.78;
+}
+
+.divisions-buildings-piped,
+.divisions-buildings-hvac {
+  padding: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--brand-green) 14%, var(--border));
+  background: color-mix(in srgb, var(--surface) 92%, var(--bg));
+}
+
+.divisions-buildings-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 0.78rem;
+}
+
+.divisions-buildings-panel-head > span {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+}
+
+.divisions-buildings-panel-head h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.35rem;
+}
+
+.divisions-buildings-piped li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 0.68rem;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.divisions-buildings-piped li svg {
+  color: var(--brand-green);
+  margin-top: 0.25rem;
+}
+
+.divisions-buildings-hvac-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.divisions-buildings-hvac-grid article {
+  position: relative;
+  overflow: hidden;
+  min-height: 10.5rem;
+  padding: 1rem;
+  border-radius: 1.1rem;
+  background: color-mix(in srgb, var(--surface-muted) 82%, var(--surface));
+  transition: transform var(--transition), background var(--transition);
+}
+
+.divisions-buildings-hvac-grid article:hover {
+  transform: translateY(-0.22rem);
+  background: color-mix(in srgb, var(--brand-green) 10%, var(--surface-muted));
+}
+
+.divisions-buildings-hvac-grid article > span {
+  color: var(--brand-green);
+  font-size: 0.68rem;
+  font-weight: 820;
+  letter-spacing: 0.12em;
+}
+
+.divisions-buildings-hvac-grid h5 {
+  margin: 0.52rem 0 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.divisions-buildings-hvac-grid p {
+  margin: 0.58rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.divisions-buildings-fitout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(24rem, 0.95fr);
+  gap: 1rem;
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding: clamp(1rem, 1.8vw, 1.35rem);
+  border-radius: clamp(1.5rem, 3vw, 2.25rem);
+  color: #fff;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(72, 167, 80, 0.25), transparent 34%),
+    linear-gradient(145deg, #171d1b, #262d2a 55%, #101513);
+  box-shadow: 0 30px 82px rgba(5, 14, 9, 0.24);
+}
+
+.divisions-buildings-fitout-copy {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.divisions-buildings-fitout-copy .divisions-section-kicker {
+  color: #75db7d;
+}
+
+.divisions-buildings-fitout-copy h3 {
+  color: #fff;
+}
+
+.divisions-buildings-fitout-copy > p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.divisions-buildings-fitout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.divisions-buildings-fitout-grid article {
+  position: relative;
+  min-height: 9.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.055);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.divisions-buildings-fitout-grid article:hover {
+  transform: translateY(-0.25rem);
+  border-color: rgba(117, 219, 125, 0.36);
+  background: rgba(72, 167, 80, 0.11);
+}
+
+.divisions-buildings-fitout-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.9rem;
+  color: #7de085;
+  background: rgba(72, 167, 80, 0.12);
+}
+
+.divisions-buildings-fitout-grid strong {
+  color: #fff;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.divisions-buildings-fitout-grid small {
+  position: absolute;
+  right: 0.85rem;
+  top: 0.78rem;
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 0.65rem;
+  font-weight: 820;
+  letter-spacing: 0.1em;
+}
+
+.divisions-buildings-fitout-photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 34rem;
+  margin: 0;
+  border-radius: 1.65rem;
+  background: #121814;
+}
+
+.divisions-buildings-fitout-photo > span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 44%, rgba(4, 13, 8, 0.8));
+}
+
+.divisions-buildings-fitout-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity, transform;
+}
+
+.divisions-buildings-fitout-pagination {
+  position: absolute;
+  z-index: 3;
+  top: 1.15rem;
+  left: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.46rem;
+  padding: 0.58rem 0.68rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(4, 13, 8, 0.58);
+  backdrop-filter: blur(12px);
+}
+
+.divisions-buildings-fitout-pagination button {
+  width: 0.48rem;
+  height: 0.48rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.34);
+  cursor: pointer;
+  transition:
+    width 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.divisions-buildings-fitout-pagination button:hover,
+.divisions-buildings-fitout-pagination button:focus-visible {
+  background: rgba(255, 255, 255, 0.72);
+  transform: scale(1.12);
+}
+
+.divisions-buildings-fitout-pagination button.is-active {
+  width: 1.35rem;
+  background: #75db7d;
+  transform: none;
+}
+
+
+:root[data-theme='dark'] .divisions-buildings {
+  background:
+    radial-gradient(circle at 4% 12%, rgba(72, 167, 80, 0.1), transparent 29rem),
+    radial-gradient(circle at 94% 80%, rgba(255, 255, 255, 0.035), transparent 30rem),
+    linear-gradient(180deg, #0b0e13, #0a0d12);
+}
+
+@keyframes divisionsBuildingSignal {
+  0%, 100% { opacity: 0.45; transform: scale(0.86); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes divisionsBuildingTrack {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(520%); }
+}
+
+@keyframes divisionsBuildingDossierOrbit {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes divisionsBuildingDossierFloat {
+  0%, 100% { transform: translate3d(-0.2rem, 0, 0); }
+  50% { transform: translate3d(0.35rem, -0.25rem, 0); }
+}
+
+@media (max-width: 1180px) {
+  .divisions-buildings-hero,
+  .divisions-buildings-dossier,
+  .divisions-buildings-fitout {
+    grid-template-columns: 1fr;
+  }
+
+  .divisions-buildings-visual {
+    min-height: 38rem;
+  }
+
+  .divisions-buildings-mechanical {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .divisions-buildings-mechanical-head {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 820px) {
+  .divisions-buildings-electrical-grid,
+  .divisions-buildings-mechanical,
+  .divisions-buildings-hvac-grid,
+  .divisions-buildings-fitout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .divisions-buildings-electrical-card.is-wide,
+  .divisions-buildings-mechanical-head {
+    grid-column: auto;
+  }
+
+  .divisions-buildings-electrical-card ul.is-two-columns {
+    columns: 1;
+  }
+
+  .divisions-buildings-fitout-photo {
+    min-height: 27rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .divisions-buildings-hero {
+    gap: 2.2rem;
+  }
+
+  .divisions-buildings-copy h2 {
+    font-size: clamp(2.7rem, 14vw, 4.3rem);
+  }
+
+  .divisions-buildings-visual {
+    min-height: 31rem;
+  }
+
+  .divisions-buildings-photo-main {
+    inset: 0 0 20% 0;
+  }
+
+  .divisions-buildings-photo-secondary {
+    width: 58%;
+    height: 42%;
+  }
+
+  .divisions-buildings-dossier,
+  .divisions-buildings-fitout {
+    padding: 0.75rem;
+    border-radius: 1.35rem;
+  }
+
+  .divisions-buildings-dossier-head,
+  .divisions-buildings-mechanical-head,
+  .divisions-buildings-piped,
+  .divisions-buildings-hvac,
+  .divisions-buildings-fitout-copy {
+    padding: 1rem;
+  }
+
+  .divisions-buildings-fitout-photo {
+    min-height: 23rem;
+  }
+
+  .divisions-buildings-dossier-image,
+  .divisions-buildings-dossier-image img {
+    min-height: 11rem;
+  }
+
+  .divisions-buildings-dossier-image {
+    margin-top: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .divisions-buildings-measurement i,
+  .divisions-buildings-card-signal i {
+    animation: none !important;
+  }
+}

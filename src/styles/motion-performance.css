@@ -1,0 +1,190 @@
+/* Homepage motion/performance pass: replay section reveals and pause heavy decorative motion off-screen. */
+.animated-section {
+  --section-animation-state: paused;
+  transform: translateZ(0);
+}
+
+.animated-section.is-section-visible {
+  --section-animation-state: running;
+}
+
+
+.home-about-section,
+.home-story-section,
+.home-numbers-section,
+.home-divisions-section,
+.home-projects-section,
+.home-services-section {
+  contain: paint;
+}
+
+.home-projects-section,
+.home-services-section {
+  contain: none;
+}
+
+.home-about-dots,
+.home-about-glow,
+.home-story-orbit-one,
+.home-story-orbit-two,
+.home-numbers-glow,
+.home-number-shine,
+.home-divisions-bg::before,
+.home-divisions-bg::after,
+.home-divisions-glow,
+.home-divisions-section .home-division-card::before,
+.home-divisions-section .home-division-energy-orb,
+.home-divisions-section .home-division-icon,
+.home-divisions-section .home-division-kicker::before,
+.home-divisions-section .home-division-link::before,
+.home-divisions-section .home-division-link svg,
+.home-divisions-section .home-division-index,
+.home-divisions-section .home-division-feature::before,
+.home-divisions-section .home-division-feature-icon * {
+  animation-play-state: var(--section-animation-state, running) !important;
+}
+
+.animated-section.is-section-resting .home-about-dots,
+.animated-section.is-section-resting .home-about-glow,
+.animated-section.is-section-resting .home-story-orbit-one,
+.animated-section.is-section-resting .home-story-orbit-two,
+.animated-section.is-section-resting .home-numbers-glow,
+.animated-section.is-section-resting .home-number-shine,
+.animated-section.is-section-resting .home-divisions-bg::before,
+.animated-section.is-section-resting .home-divisions-bg::after,
+.animated-section.is-section-resting .home-divisions-glow,
+.animated-section.is-section-resting .home-divisions-section .home-division-card::before,
+.animated-section.is-section-resting .home-division-card::before,
+.animated-section.is-section-resting .home-division-energy-orb,
+.animated-section.is-section-resting .home-division-icon,
+.animated-section.is-section-resting .home-division-kicker::before,
+.animated-section.is-section-resting .home-division-link::before,
+.animated-section.is-section-resting .home-division-link svg,
+.animated-section.is-section-resting .home-division-index,
+.animated-section.is-section-resting .home-division-feature::before,
+.animated-section.is-section-resting .home-division-feature-icon * {
+  animation: none !important;
+}
+
+.home-numbers-glow,
+.home-divisions-glow,
+.home-services-glow,
+.home-projects-glow {
+  will-change: auto;
+}
+
+.home-numbers-glow {
+  filter: blur(2px) !important;
+  opacity: 0.46;
+}
+
+.home-numbers-section .home-numbers-panel {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.home-number-card,
+.home-division-card,
+.home-service-card,
+.home-project-card-wrap {
+  backface-visibility: hidden;
+}
+
+.home-number-shine {
+  will-change: background-position, opacity;
+}
+
+.home-divisions-section .home-divisions-glow {
+  filter: none !important;
+  opacity: 0.18 !important;
+}
+
+.home-divisions-section .home-division-card {
+  contain: layout paint style;
+  transform: translateZ(0);
+}
+
+.home-divisions-section .home-division-card::before {
+  will-change: background-position;
+}
+
+.home-divisions-section .home-division-feature {
+  position: relative;
+  z-index: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.86), transparent 36%),
+    linear-gradient(135deg, var(--division-pill-bg), rgba(255, 255, 255, 0.8)) !important;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.home-divisions-section .home-division-feature-icon,
+.home-divisions-section .home-division-feature-label {
+  position: relative;
+  z-index: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.home-divisions-section .home-division-feature-icon svg {
+  transform: translateZ(0);
+}
+
+.home-divisions-section .home-division-card-oil .home-division-feature,
+:root[data-theme='dark'] .home-divisions-section .home-division-card-oil .home-division-feature {
+  color: #f6fff8 !important;
+  border-color: rgba(220, 250, 226, 0.2) !important;
+  background:
+    linear-gradient(135deg, rgba(241, 255, 244, 0.105), rgba(226, 249, 232, 0.045)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(3, 31, 16, 0.12),
+    0 14px 34px rgba(0, 18, 8, 0.11) !important;
+}
+
+.home-divisions-section .home-division-card-oil .home-division-feature-icon,
+.home-divisions-section .home-division-card-oil .home-division-feature-label,
+:root[data-theme='dark'] .home-divisions-section .home-division-card-oil .home-division-feature-icon,
+:root[data-theme='dark'] .home-divisions-section .home-division-card-oil .home-division-feature-label {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (hover: hover) {
+  .home-divisions-section .home-division-feature:hover .home-division-feature-icon svg {
+    transform: translate3d(0.08rem, -0.04rem, 0) scale(1.04);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-numbers-glow,
+  .home-divisions-glow,
+  .home-services-glow,
+  .home-projects-glow {
+    display: none !important;
+  }
+
+  .home-divisions-section .home-division-card::before {
+    animation: none !important;
+  }
+
+  .home-divisions-section .home-division-feature::before {
+    animation-duration: 12s !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-section {
+    transform: none !important;
+  }
+
+  .animated-section *,
+  .animated-section *::before,
+  .animated-section *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

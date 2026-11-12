@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "profile": "Profile",
+    "history": "History",
+    "missionVision": "Mission & Vision",
+    "corporate": "Corporate",
+    "solutionProvider": "Solution Provider",
+    "hse": "HSE",
+    "qmsIso": "QMS/ISO",
+    "csr": "CSR",
+    "division": "Division",
+    "divisions": "Divisions",
+    "buildingsFactories": "Buildings & Factories",
+    "powerSolutions": "Power Solutions",
+    "dataCenter": "Data Centre",
+    "oilGas": "Oil & Gas",
+    "projects": "Projects",
+    "facility": "Facility Mgt",
+    "facilityManagement": "Facility Management",
+    "renewableEnergy": "Renewable Energy",
+    "contact": "Contact"
+  },
+  "actions": {
+    "switchTheme": "Switch theme",
+    "switchLanguage": "Select language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "light": "Light",
+    "dark": "Dark",
+    "explore": "Explore",
+    "contact": "Contact us"
+  },
+  "home": {
+    "eyebrow": "Engineering. Procurement. Construction.",
+    "title": "Bringing life to great structures",
+    "intro": "Lambert Electromec delivers world-class MEP, EPC, power, data center and facility management solutions across West Africa."
+  },
+  "placeholder": {
+    "title": "Page structure ready",
+    "body": "Content, visuals and interactions will be built in the next phase."
+  },
+  "loader": {
+    "ariaLabel": "Loading Lambert Electromec",
+    "title": "Loading...",
+    "body": "Engineering excellence, loading with precision."
+  }
+}

@@ -1,0 +1,38 @@
+:root {
+  --brand-green: #48A750;
+  --brand-green-deep: #2f7d38;
+  --brand-green-dark: #2f8f42;
+  --brand-green-darker: #267236;
+  --brand-graphite: #383A3D;
+  --font-display: 'Manrope', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Manrope', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --shadow-soft: 0 24px 80px rgba(11, 25, 17, 0.12);
+  --shadow-dropdown: 0 26px 70px rgba(10, 24, 13, 0.16);
+  --dropdown-highlight: rgba(72, 167, 80, 0.14);
+  --dropdown-glow: rgba(72, 167, 80, 0.1);
+  --transition: 220ms ease;
+}
+
+:root[data-theme='light'] {
+  --bg: #f6f8f5;
+  --surface: #ffffff;
+  --surface-muted: #edf3ee;
+  --text: #1c211d;
+  --text-muted: #626d67;
+  --border: rgba(56, 58, 61, 0.12);
+}
+
+:root[data-theme='dark'] {
+  --bg: #090b12;
+  --surface: #11141c;
+  --surface-muted: #191e28;
+  --text: #f5f7f3;
+  --text-muted: #aeb7b2;
+  --border: rgba(255, 255, 255, 0.1);
+  --dropdown-highlight: rgba(72, 167, 80, 0.1);
+  --dropdown-glow: rgba(255, 255, 255, 0.06);
+  --shadow-soft: 0 26px 90px rgba(0, 0, 0, 0.44);
+  --shadow-dropdown: 0 28px 80px rgba(0, 0, 0, 0.5);
+}

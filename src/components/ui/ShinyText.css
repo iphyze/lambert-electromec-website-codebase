@@ -1,0 +1,61 @@
+.shiny-text {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  color: var(--shiny-base, #f4fff2);
+  -webkit-text-fill-color: currentColor;
+  overflow: visible;
+  isolation: isolate;
+}
+
+/*
+ * Keep the real text permanently visible. The shine is a separate visual
+ * layer, so an animation/rendering glitch can never make the heading vanish.
+ */
+.shiny-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  color: transparent;
+  background-image: linear-gradient(
+    var(--shiny-angle, 110deg),
+    transparent 0%,
+    transparent 36%,
+    rgba(255, 255, 255, 0.08) 43%,
+    var(--shiny-highlight, #ffffff) 49%,
+    var(--shiny-accent, #a9eb76) 52%,
+    rgba(255, 255, 255, 0.10) 58%,
+    transparent 65%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  background-position: 160% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  white-space: normal;
+  overflow: visible;
+  animation: shinyTextSweep var(--shiny-speed, 5s) linear infinite;
+}
+
+.shiny-text-disabled::after {
+  display: none;
+}
+
+@keyframes shinyTextSweep {
+  0% { background-position: 160% 50%; }
+  100% { background-position: -80% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shiny-text::after {
+    display: none !important;
+    animation: none !important;
+  }
+}

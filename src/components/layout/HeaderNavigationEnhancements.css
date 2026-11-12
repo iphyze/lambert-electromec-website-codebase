@@ -1,0 +1,9 @@
+/* Keeps desktop dropdowns from lingering after a submenu selection. */
+.site-header.is-submenu-locked-closed .submenu,
+.site-header.is-submenu-locked-closed .nav-menu-item:hover .submenu,
+.site-header.is-submenu-locked-closed .nav-menu-item:focus-within .submenu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(0.45rem) scale(0.98) !important;
+}

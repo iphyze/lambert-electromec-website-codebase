@@ -1,0 +1,107 @@
+export const renewableEnergyContent = {
+  seo: {
+    title: 'Renewable Energy',
+    description: "Powering West Africa's transition to cleaner, more reliable energy with solar, energy storage, waste-to-energy and integrated renewable power solutions.",
+    keywords: [
+      'renewable energy Nigeria',
+      'solar EPC Nigeria',
+      'energy storage West Africa',
+      'waste to energy',
+      'solar feasibility assessment',
+      'Lambert Electromec renewable energy',
+    ],
+  },
+  hero: {
+    eyebrow: 'Power & Clean Energy',
+    title: 'Renewable Energy',
+    tagline: 'Cleaner, more reliable power for West Africa.',
+    image: 'assets/images/landing/renewable-energy.webp',
+    primaryCta: { label: 'Explore our solutions', target: 'renewable-solutions' },
+    secondaryCta: { label: 'Talk to our team', href: '/contact' },
+  },
+  overview: {
+    eyebrow: 'Integrated Renewable Delivery',
+    heading: 'Local execution. Global renewable expertise.',
+    featureLabel: 'Built for West Africa',
+    featured: "Lambert Electromec designs, builds, and operates renewable power solutions — from solar photovoltaic systems to energy storage and waste-to-energy plants — engineered to cut costs, reduce emissions, and keep power flowing when the grid can't. Backed by our partnership with Phoenix Energy, part of the INDEVCO Group with more than 60 years of heritage, we bring proven, bankable renewable technology to homes, businesses, and industry across Nigeria and West Africa.",
+    paragraphs: [
+      "Energy reliability remains one of the biggest costs of doing business in West Africa. Our renewable energy division combines Lambert Electromec's local EPC capability with Phoenix Energy's international renewable project experience to deliver practical, bankable power infrastructure.",
+      'Together, we cover the full project lifecycle from feasibility and site assessment through engineering, supply, construction, installation, operation, and long-term maintenance.',
+    ],
+    lifecycleLabel: 'Project delivery lifecycle',
+    modelsLabel: 'Flexible delivery models',
+    lifecycle: [
+      'Feasibility & site assessment',
+      'Engineering & design',
+      'Equipment supply',
+      'Construction & installation',
+      'Operation & maintenance',
+    ],
+    deliveryModels: ['EPC', 'BOT', 'BOO'],
+  },
+  solutions: {
+    eyebrow: 'Our Renewable Energy Solutions',
+    heading: 'Our Renewable Energy Solutions',
+    items: [
+      {
+        key: 'solar',
+        title: 'Solar Photovoltaic & Solar Thermal',
+        description: "We design, install, and maintain high-quality solar systems and inverter backup solutions that are efficient, cost-effective, and built around each customer's power profile — available as:",
+        bullets: ['On-Grid Solar PV Systems', 'Off-Grid Solar PV Systems', 'Hybrid Grid Solar PV Systems'],
+      },
+      {
+        key: 'storage',
+        title: 'Energy Storage Systems',
+        description: "Our Electrical Energy Storage Systems (EESS) keep renewable power available even when the sun isn't shining or the grid goes down. Paired with a solar PV installation, EESS improves supply reliability, supports fast frequency response and demand management, and reduces overall power quality issues — suited to grid-connected, commercial, and industrial off-grid demand.",
+      },
+      {
+        key: 'biomass',
+        title: 'Biomass & Waste-to-Energy',
+        description: 'We convert organic and industrial waste streams into usable power, reducing disposal costs while generating reliable energy for the sites that produce that waste.',
+      },
+      {
+        key: 'wind',
+        title: 'Wind, Landfill Gas & Waste Heat Recovery',
+        description: 'Beyond solar, our capabilities extend to wind power, landfill gas capture, and waste heat and waste gas recovery — giving industrial clients more ways to turn energy that would otherwise be lost into usable power.',
+      },
+      {
+        key: 'audit',
+        title: 'Energy Audit & Solar Feasibility Assessment',
+        description: 'Before any equipment is specified, our energy consultants assess whether renewable energy is the right fit — reviewing energy production and consumption to eliminate waste, sizing the right solution for your site, and modelling the return on investment and payback period.',
+      },
+    ],
+  },
+  whyLambert: {
+    eyebrow: 'Why Lambert Electromec',
+    heading: 'Why Lambert Electromec',
+    stats: [
+      { value: '20+', label: 'years of engineering experience in West Africa' },
+      { value: 'Tier-1', label: 'vendor for engineering solutions' },
+      { value: 'ISO', label: 'certified for quality, health, safety, and environmental management' },
+      { value: '1,000+', label: 'skilled professionals worldwide' },
+    ],
+    partnership: 'Global renewable technology partnership with Phoenix Energy, part of the INDEVCO Group with more than 60 years of heritage, active across the Middle East, North Africa, Europe, and the United States',
+    partnersIntro: 'We work with world-class technology partners — including Huawei, Sungrow, LONGi, Canadian Solar, Jinko Solar, Siemens, Schneider Electric, and GE — to make sure every installation is built on proven, bankable equipment.',
+    partners: ['Huawei', 'Sungrow', 'LONGi', 'Canadian Solar', 'Jinko Solar', 'Siemens', 'Schneider Electric', 'GE'],
+  },
+  trackRecord: {
+    eyebrow: 'Proven Track Record',
+    heading: 'Proven Track Record',
+    intro: 'Through our partnership with Phoenix Energy, our combined portfolio includes renewable energy projects such as:',
+    projects: [
+      { value: '64 MWp', label: 'solar plant', location: 'Egypt' },
+      { value: '10 MWp', label: 'solar plant', location: 'Anarita, Cyprus' },
+      { value: '30 MW', label: 'biomass cogeneration plant', location: 'United Corrstack Inc., Reading, Pennsylvania (USA)' },
+      { value: '1.75 MWp', label: 'solar carport installation', location: 'ENOVA–MAF, Egypt' },
+      { value: '1.08 MWp', label: 'solar canopy installation', location: 'Beirut River Solar Snake, Lebanon' },
+      { value: 'Utility-scale', label: 'solar plants currently under construction', location: 'Cyprus and Italy' },
+    ],
+  },
+  cta: {
+    eyebrow: 'Get Started',
+    heading: 'Considering solar, storage, or another renewable solution for your site?',
+    description: 'Our team can walk you through a free energy audit and feasibility assessment to find the right fit for your business.',
+    label: 'Talk to our renewable energy team',
+    href: '/contact',
+  },
+}

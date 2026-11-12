@@ -1,0 +1,66 @@
+* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--fixed-header-offset, 96px);
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transitioning,
+  html.theme-transitioning *,
+  html.theme-transitioning *::before,
+  html.theme-transitioning *::after {
+    transition:
+      background-color 560ms ease,
+      background 560ms ease,
+      color 560ms ease,
+      border-color 560ms ease,
+      box-shadow 560ms ease,
+      opacity 360ms ease,
+      fill 560ms ease,
+      stroke 560ms ease !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  transition: background 560ms ease, color 560ms ease;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
+  font-synthesis-weight: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+img { display: block; max-width: 100%; }
+::selection { background: rgba(72, 167, 80, 0.25); }
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--brand-green);
+  color: white;
+  padding: .7rem 1rem;
+  border-radius: 999px;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Consistent keyboard focus without changing pointer/touch presentation. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand-green) 62%, transparent);
+  outline-offset: 3px;
+}
