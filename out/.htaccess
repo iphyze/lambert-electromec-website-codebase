@@ -1,0 +1,54 @@
+ErrorDocument 404 /404.html
+
+<IfModule mod_mime.c>
+  AddType text/plain .txt
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Preserve legacy/direct Divisions URLs from the React site and route them
+  # to the matching section on the current single-page Divisions experience.
+  RewriteRule ^division/?$ /divisions/ [R=301,L,NE]
+  RewriteRule ^division/(?:building-factories|buildings-factories)/?$ /divisions/#buildings-factories [R=301,L,NE]
+  RewriteRule ^divisions/(?:building-factories|buildings-factories)/?$ /divisions/#buildings-factories [R=301,L,NE]
+  RewriteRule ^division/(?:power-solutions|power-generation|power-generation-hybrid-solutions)/?$ /divisions/#power-solutions [R=301,L,NE]
+  RewriteRule ^divisions/power-solutions/?$ /divisions/#power-solutions [R=301,L,NE]
+  RewriteRule ^division/(?:data-center|data-centre|data-center-telecom)/?$ /divisions/#data-center [R=301,L,NE]
+  RewriteRule ^divisions/data-center/?$ /divisions/#data-center [R=301,L,NE]
+  RewriteRule ^division/(?:oil-gas|oil-and-gas|oil-gas-processing-solutions)/?$ /divisions/#oil-gas [R=301,L,NE]
+  RewriteRule ^divisions/oil-gas/?$ /divisions/#oil-gas [R=301,L,NE]
+
+  RewriteRule ^fr/division/?$ /fr/divisions/ [R=301,L,NE]
+  RewriteRule ^fr/division/(?:building-factories|buildings-factories)/?$ /fr/divisions/#buildings-factories [R=301,L,NE]
+  RewriteRule ^fr/divisions/(?:building-factories|buildings-factories)/?$ /fr/divisions/#buildings-factories [R=301,L,NE]
+  RewriteRule ^fr/division/(?:power-solutions|power-generation|power-generation-hybrid-solutions)/?$ /fr/divisions/#power-solutions [R=301,L,NE]
+  RewriteRule ^fr/divisions/power-solutions/?$ /fr/divisions/#power-solutions [R=301,L,NE]
+  RewriteRule ^fr/division/(?:data-center|data-centre|data-center-telecom)/?$ /fr/divisions/#data-center [R=301,L,NE]
+  RewriteRule ^fr/divisions/data-center/?$ /fr/divisions/#data-center [R=301,L,NE]
+  RewriteRule ^fr/division/(?:oil-gas|oil-and-gas|oil-gas-processing-solutions)/?$ /fr/divisions/#oil-gas [R=301,L,NE]
+  RewriteRule ^fr/divisions/oil-gas/?$ /fr/divisions/#oil-gas [R=301,L,NE]
+
+  # CMS project detail URLs are served through one statically exported runtime shell.
+  # The browser keeps the real project slug while the shell fetches the published
+  # project from the PHP API, so newly published slugs do not require a Next rebuild.
+  # Never rewrite a real exported file (especially projects/index.html after
+  # Apache DirectoryIndex resolution) as though its filename were a CMS slug.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^projects/(?!__runtime-detail__/?$)([^/]+)/?$ /projects/__runtime-detail__/index.html [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^fr/projects/(?!__runtime-detail__/?$)([^/]+)/?$ /fr/projects/__runtime-detail__/index.html [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)/(__next\.[^.]+)\.([^.]+)\.([^.]+)\.([^.]+)\.(__[^/]+__)\.txt$ $1/$2/$3/$4/$5/$6.txt [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)/(__next\.[^.]+)\.([^.]+)\.([^.]+)\.(__[^/]+__)\.txt$ $1/$2/$3/$4/$5.txt [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)/(__next\.[^.]+)\.([^.]+)\.(__[^/]+__)\.txt$ $1/$2/$3/$4.txt [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)/(__next\.[^.]+)\.(__[^/]+__)\.txt$ $1/$2/$3.txt [L]
+</IfModule>
